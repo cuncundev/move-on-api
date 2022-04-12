@@ -1,16 +1,16 @@
 # move-on-api
 
-**Authorization**
+## Authorization
 - Client IPs need to be whitelisted, please contact us to whitelist your IPs.
 
-**API Base URL**
+## API Base URL
 - Production server: https://member.cuncun2u.com/api/v1/tp/
 - Testing server: https://staging.cuncun2u.com/api/v1/tp/
 
-**Endpoints**
+## Endpoints
 - `mo/register`
 
-**Usage**
+## Usage
 1. Make a HTTP POST request to the endpoint
 2. Set the `Content-Type` and `accept` header to `application/json`
 
@@ -37,8 +37,7 @@ curl --request POST \
 
 ```
 
-
-**Required Data** 
+## Required Data
 JSON Object
 ```json
 {   
@@ -49,7 +48,8 @@ JSON Object
     // format (php date format): Y-m-d 
     "date_of_birth": "1990-01-31",
 
-    // 
+    // integer, required
+    // please refer to the enumerations sections of this documentation
     "race": 1,
 
     // integer, required
@@ -91,15 +91,15 @@ JSON Object
 }
 ```
 
-**Response**
+## Response
 ```json
 {
-
+    "message": "Operation Success"
 }
 ```
 
 
-**Enumerations**
+## Enumerations
 ```json
 {
     "gender": { 

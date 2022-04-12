@@ -1,18 +1,22 @@
-# move-on-api
+# Move On Integration API
+
+## Objective
+- Allow Move On app to register a Cun Cun account while signing up in Move On app. If success the user will also automatically enrolled to Move On's VIP Community.
 
 ## Authorization
 - Client IPs need to be whitelisted, please contact us to whitelist your IPs.
+- Production and Testing can have different set of IPs.
 
 ## API Base URL
 - Production server: https://member.cuncun2u.com/api/v1/tp/
 - Testing server: https://staging.cuncun2u.com/api/v1/tp/
 
-## Endpoints
+## Available Endpoints
 - `mo/register`
 
 ## Usage
-1. Make a HTTP POST request to the endpoint
-2. Set the `Content-Type` and `accept` header to `application/json`
+1. Make a HTTP POST request to the endpoint.
+2. Set the `Content-Type` and `accept` header to `application/json`.
 
 ```sh
 curl --request POST \
@@ -38,7 +42,6 @@ curl --request POST \
 ```
 
 ## Required Data
-JSON Object
 ```json
 {   
     // string, required

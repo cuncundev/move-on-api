@@ -41,7 +41,7 @@ curl --request POST \
 
 ```
 
-## Required Data
+## Request Data
 ```js
 {   
     // string, required
@@ -95,7 +95,13 @@ curl --request POST \
 }
 ```
 
-## Response
+## Responses
+1. Input error, http code 422
+- http code 200, Phone number not exist, can register a new user, put this user into Move On VIP
+- http code 200, Phone number exist, no need register, no vip status, put this user into Move On VIP
+- http code 200, Phone number exist, no need register, GOT VIP STATUS, can't do anything
+
+
 ```js
 {
     "message": "Operation Success"

@@ -51,8 +51,9 @@ curl --request POST \
     // format (php date format): Y-m-d 
     "date_of_birth": "1990-01-31",
 
-    // integer, required
+    // integer, optional
     // please refer to the enumerations sections of this documentation
+    // omitting this field, zero, empty string, null, or any value other than specify in the enums will means not saving this field in our server
     "race": 1,
 
     // integer, required

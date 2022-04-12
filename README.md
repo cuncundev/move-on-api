@@ -1,7 +1,7 @@
 # Move On Integration API
 
 ## Objective
-- Allow Move On app to register a Cun Cun account while signing up in Move On app. If success the user will also automatically enrolled to Move On's VIP Community.
+- Allow Move On app to register a Cun Cun account while signing up in Move On app. If success the user will also automatically enrolled to Move On's VIP Membership.
 
 ## Authorization
 - Client IPs need to be whitelisted, please contact us to whitelist your IPs.
@@ -102,11 +102,30 @@
 ## Responses
 1. Successful Response, `http_code: 200`
    1. Phone number not exist, can register a new user, put this user into Move On VIP
-   2. Phone number exist, no need register, no vip status, put this user into Move On VIP
-   3. Phone number exist, no need register, GOT VIP STATUS, can't do anything
         ```js
         {
-            "message": "Operation Success"
+            "user_is_new" : true,
+            "user_has_vip": false,
+            "sms_sent"    : true,
+            "message"     : "new_cuncun_user_created_with_MO_VIP_member"
+        }        
+        ```
+   3. Phone number exist, no need register, no vip status, put this user into Move On VIP
+        ```js
+        {
+            "user_is_new" : false,
+            "user_has_vip": false,
+            "sms_sent"    : true,
+            "message": "existing_user_create_new_VIP_member"
+        }
+        ```
+   4. Phone number exist, no need register, GOT VIP STATUS, can't do anything
+        ```js
+        {
+            "user_is_new" : false,
+            "user_has_vip": true,
+            "sms_sent"    : false,        
+            "message": "user_is_already_VIP_member"
         }
         ```
 2. Client Error, `http_code: 422`

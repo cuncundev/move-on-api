@@ -43,7 +43,7 @@
     ```
 
 ## Request Data
-1. The request payload shall be in valid JSON format.
+1. The request payload shall be in valid JSON format, therefore special character shall be encoded.
 ```js
 {   
     // string, required

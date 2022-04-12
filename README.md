@@ -1,7 +1,7 @@
 # move-on-api
 
 **Authorization**
-- Client IPs need to be whitelisted
+- Client IPs need to be whitelisted, please contact us to whitelist your IPs.
 
 **API Base URL**
 - Production server: https://member.cuncun2u.com/api/v1/tp/
@@ -10,16 +10,29 @@
 **Endpoints**
 - `mo/register`
 
-
 **Usage**
-```
+1. Make a HTTP POST request to the endpoint
+2. Set the `Content-Type` and `accept` header to `application/json`
+
+```sh
 curl --request POST \
   --url https://cuncun.test/api/v1/tp/mo/register \
   --header 'Content-Type: application/json' \
   --header 'accept: application/json' \
-  --data '{
-
-}
+  --data '{   
+    "email": "jennifer90@gmail.com",
+    "date_of_birth": "1990-01-31",
+    "race": 1,
+    "ext": 133, 
+    "contact_number": "123456789",
+    "gender": 2, 
+    "name": "Jennifer d/o Collins",  
+    "nationality": 1, 
+    "national_id_type": 1,
+    "national_id": "900131-10-1234",
+    "industry": 3,
+    "occupation": 18
+}'
 '
 
 ```
@@ -27,7 +40,7 @@ curl --request POST \
 
 **Required Data** 
 JSON Object
-```
+```json
 {   
     // string, required
     "email": "jennifer90@gmail.com",
@@ -37,7 +50,7 @@ JSON Object
     "date_of_birth": "1990-01-31",
 
     // 
-    "race": ""
+    "race": 1,
 
     // integer, required
     // please refer to the enumerations sections of this documentation
@@ -74,12 +87,12 @@ JSON Object
 
     // integer, required
     // please refer to the enumerations sections of this documentation
-    "occupation": 18 ,
+    "occupation": 18
 }
 ```
 
 **Response**
-```
+```json
 {
 
 }
@@ -94,10 +107,10 @@ JSON Object
         "2": "Female"
     },
     "race": {
-        "1": "Malay", // Include any 
+        "1": "Malay",
         "2": "Chinese",
         "3": "Indian",
-        "99": "Malay",
+        "99": "Other",
     },
     "ext": { // Contact number country extension
         "133": "+60", // Malaysia

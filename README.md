@@ -133,7 +133,9 @@
         ```js
         {
           "errors": {
+            "email": "Please provide a valid email",
             //...
+            
           }
         } 
         ```

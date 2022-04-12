@@ -96,18 +96,25 @@ curl --request POST \
 ```
 
 ## Responses
-1. Input error, http code 422
-- http code 200, Phone number not exist, can register a new user, put this user into Move On VIP
-- http code 200, Phone number exist, no need register, no vip status, put this user into Move On VIP
-- http code 200, Phone number exist, no need register, GOT VIP STATUS, can't do anything
-
-
+1. Successful Response, `http_code: 200`
+  1. Phone number not exist, can register a new user, put this user into Move On VIP
+  2. Phone number exist, no need register, no vip status, put this user into Move On VIP
+  3. Phone number exist, no need register, GOT VIP STATUS, can't do anything
 ```js
 {
     "message": "Operation Success"
 }
 ```
 
+2. Client Error, `http_code: 422`
+  1. Input data error
+```js
+{
+  "errors": {
+    ...
+  }
+} 
+```
 
 ## Enumerations
 ```js

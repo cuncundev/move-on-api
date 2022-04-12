@@ -42,7 +42,7 @@ curl --request POST \
 ```
 
 ## Required Data
-```json
+```js
 {   
     // string, required
     "email": "jennifer90@gmail.com",
@@ -95,7 +95,7 @@ curl --request POST \
 ```
 
 ## Response
-```json
+```js
 {
     "message": "Operation Success"
 }
@@ -103,7 +103,7 @@ curl --request POST \
 
 
 ## Enumerations
-```json
+```js
 {
     "gender": { 
         "1": "Male",

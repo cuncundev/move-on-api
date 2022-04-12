@@ -5,43 +5,45 @@
 
 ## Authorization
 - Client IPs need to be whitelisted, please contact us to whitelist your IPs.
-- Production and Testing can have different set of IPs.
+- Production and Testing server can have different set of IPs, or they can be the same.
 
 ## API Base URL
 - Production server: https://member.cuncun2u.com/api/v1/tp/
 - Testing server: https://staging.cuncun2u.com/api/v1/tp/
 
 ## Available Endpoints
-- `mo/register`
+- `mo/register` : to register a user
 
 ## Usage
-1. Make a HTTP POST request to the endpoint.
+1. Make a **HTTP POST** request to the endpoint.
 2. Set the `Content-Type` and `accept` header to `application/json`.
 
-```sh
-curl --request POST \
-  --url https://cuncun.test/api/v1/tp/mo/register \
-  --header 'Content-Type: application/json' \
-  --header 'accept: application/json' \
-  --data '{   
-    "email": "jennifer90@gmail.com",
-    "date_of_birth": "1990-01-31",
-    "race": 1,
-    "ext": 133, 
-    "contact_number": "123456789",
-    "gender": 2, 
-    "name": "Jennifer d/o Collins",  
-    "nationality": 1, 
-    "national_id_type": 1,
-    "national_id": "900131-10-1234",
-    "industry": 3,
-    "occupation": 18
-}'
-'
-
-```
+## Usage Exmaple
+1. cURL
+    ```sh
+    curl --request POST \
+      --url https://cuncun.test/api/v1/tp/mo/register \
+      --header 'Content-Type: application/json' \
+      --header 'accept: application/json' \
+      --data '{   
+        "email": "jennifer90@gmail.com",
+        "date_of_birth": "1990-01-31",
+        "race": 1,
+        "ext": 133, 
+        "contact_number": "123456789",
+        "gender": 2, 
+        "name": "Jennifer d/o Collins",  
+        "nationality": 1, 
+        "national_id_type": 1,
+        "national_id": "900131-10-1234",
+        "industry": 3,
+        "occupation": 18
+    }'
+    '
+    ```
 
 ## Request Data
+1. The request payload shall be in valid JSON format.
 ```js
 {   
     // string, required

@@ -48,7 +48,9 @@ curl --request POST \
     "email": "jennifer90@gmail.com",
 
     // string, date, required
-    // format (php date format): Y-m-d 
+    // Format (php date format): Y-m-d
+    // ISO 8601 without time
+    // Example: 1990-01-09, 2000-12-31
     "date_of_birth": "1990-01-31",
 
     // integer, optional
@@ -68,7 +70,7 @@ curl --request POST \
     // please refer to the enumerations sections of this documentation
     "gender": 2, 
 
-    // string, required
+    // string, required, max_length: 255
     // Full name like in user's legal identification document
     "name": "Jennifer d/o Collins",  
 
@@ -81,8 +83,8 @@ curl --request POST \
     // please refer to the enumerations sections of this documentation
     "national_id_type": 1,
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation    
+    // string, required
+    // please refer to the enumerations sections of this documentation
     "national_id": "900131-10-1234",
 
     // integer, required
@@ -128,7 +130,7 @@ curl --request POST \
         "3": "Indian",
         "99": "Other",
     },
-    "ext": { // Contact number country extension
+    "ext": { // Contact number country extension we supported
         "133": "+60", // Malaysia
         "216": "+66"  // Thailand
     },

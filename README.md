@@ -1,7 +1,10 @@
 # Move On Integration API Documentation (v0.1.0)
 
 ## Consumer Notice
-This API documentation is solely for **Move On by Gisel United Sdn Bhd (908900-D)** for the intention of integrate some of the features **Cun Cun First Trading** provided. Please take this document as private and confidential.
+This API documentation is solely written for **Move On by Gisel United Sdn Bhd (908900-D)** for the intention of integrate some of the features **Cun Cun First Trading** provided. Please take this document as private and confidential.
+
+## Contact and Support
+- Please do not hesitate to contact our friendly developers via the "Move On x Cun Cun" WhatsApp group.
 
 ## Objective
 - Allow Move On app to register a Cun Cun account while signing up in Move On app. If success the user will also automatically enrolled to Move On's VIP Membership.
@@ -28,7 +31,7 @@ This API documentation is solely for **Move On by Gisel United Sdn Bhd (908900-D
     > Please change the **API Base URL** to your respective environment.
     ```sh
     curl --request POST \
-      --url https://staging.cuncun2u.com/api/v1/tp/mo/register \
+      --url https://staging.cuncun2u.com/api/v1/tp/mo/register \ # Please change to the correct API Base URL of your env
       --header 'Content-Type: application/json' \
       --header 'accept: application/json' \
       --data '{   

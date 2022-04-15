@@ -1,4 +1,7 @@
-# Move On Integration API
+# Move On Integration API Documentation (v0.1.0)
+
+## Consumer Notice
+This API documentation is solely for **Move On by Gisel United Sdn Bhd (908900-D)** for the intention of integrate some of the features **Cun Cun First Trading** provided. Please take this document as private and confidential.
 
 ## Objective
 - Allow Move On app to register a Cun Cun account while signing up in Move On app. If success the user will also automatically enrolled to Move On's VIP Membership.
@@ -8,21 +11,24 @@
 - Production and Testing server can have different set of IPs, or they can be the same.
 
 ## API Base URL
-- Production server: https://member.cuncun2u.com/api/v1/tp/
 - Testing server: https://staging.cuncun2u.com/api/v1/tp/
+- Production server: https://member.cuncun2u.com/api/v1/tp/
 
 ## Available Endpoints
-- `mo/register` : to register a user
+- `mo/register` 
+    - HTTP Method: `POST` only
+    - Description: For register a User in Cun Cun and place the User into Move On VIP Membership.
 
-## Usage
-1. Make a **HTTP POST** request to the endpoint.
-2. Set the `Content-Type` and `accept` header to `application/json`.
+## Usage Procedure
+1. Make a **HTTP** request with the payload the endpoint, with correct **HTTP Method**, set the `Content-Type` and `accept` header to `application/json`.
+2. Server will return respond for successful or unsuccessful request.
 
-## Usage Exmaple
+## Usage Example
 1. cURL
+    > Please change the **API Base URL** to your respective environment.
     ```sh
     curl --request POST \
-      --url https://cuncun.test/api/v1/tp/mo/register \
+      --url https://staging.cuncun2u.com/api/v1/tp/mo/register \
       --header 'Content-Type: application/json' \
       --header 'accept: application/json' \
       --data '{   
@@ -46,55 +52,83 @@
 1. The request payload shall be in valid JSON format, therefore special character shall be encoded.
 ```js
 {   
-    // string, required
+    /*
+        Properties: string, required
+        Description: Email address for non marketing purpose. E.g. password reset.
+    */
     "email": "jennifer90@gmail.com",
-
-    // string, date, required
-    // Format (php date format): Y-m-d
-    // ISO 8601 without time
-    // Example: 1990-01-09, 2000-12-31
+    
+    /*
+        Properties: string, date, required
+        Description: User's birthday for age validation purpose to determine validity of the insurance program provided.    
+        Format: Y-m-d (PHP Date format, ISO 8601 without time)
+        Example: 1990-01-09, 2000-12-31
+    */
     "date_of_birth": "1990-01-31",
-
-    // integer, optional
-    // please refer to the enumerations sections of this documentation
-    // omitting this field, zero, empty string, null, or any value other than specify in the enums will means not saving this field in our server
+    
+    /*
+        Properties: integer, enums, optional
+        Enums: Please refer to the enumerations sections of this documentation
+        Description: To omit this field, don't include this into the payload or provide zero, empty string, null, or any value other than specify in the enums will means not saving this field in our server.
+    */
     "race": 1,
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation
-    "ext": 133, 
+    /*
+        Properties: string, required        
+        Description: Mobile number country code, e.g. "+60", "+66".
+    */
+    "ext": "+60", 
 
-    // string, required
-    // mobile phone number without country code. For example, "+60 12 - 345 6789" will be "123456789"
+    /*
+        Properties: string, numeric, required
+        Description: Mobile phone number without country code and special character. For example, "+60 12 - 345 6789" will be "123456789".
+    */
     "contact_number": "123456789",
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation
+    /*
+        Properties: integer, enums, required
+        Enums: Please refer to the enumerations sections of this documentation
+        Description: We currently only support the genders listed in the enumerations sections.
+    */
     "gender": 2, 
 
-    // string, required, max_length: 255
-    // Full name like in user's legal identification document
+    /*
+        Properties: string, required, max_length(255)
+        Description: Full name like in user's legal identification document
+    */
     "name": "Jennifer d/o Collins",  
 
-    // integer, required
-    // Please refer to the enumerations sections of this documentation
-    // To tell user is Malaysian or Non-Malaysian
+    /*
+        Properties: integer, enums, required
+        Enums: Please refer to the enumerations sections of this documentation
+        Description: To tell user is Malaysian or Non-Malaysian
+
+    */
     "nationality": 1, 
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation
+    /*
+        Properties: integer, enums, required
+        Enums: Please refer to the enumerations sections of this documentation
+        Description: To tell the national_id whether is a MyKad, Passport, Police ID or Army ID. 
+    */
     "national_id_type": 1,
 
-    // string, required
-    // please refer to the enumerations sections of this documentation
+    /*
+        Properties: string, required
+        Description: The identity number, can have standard symbol and alphanumeric
+    */
     "national_id": "900131-10-1234",
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation
+    /*
+        Properties: integer, enums, required
+        Enums: Please refer to the enumerations sections of this documentation
+    */
     "industry": 3,
 
-    // integer, required
-    // please refer to the enumerations sections of this documentation
+    /*
+        Properties: integer, required
+        Enums: Please refer to the enumerations sections of this documentation
+    */
     "occupation": 18
 }
 ```
@@ -152,10 +186,6 @@
         "2": "Chinese",
         "3": "Indian",
         "99": "Other",
-    },
-    "ext": { // Contact number country extension we supported
-        "133": "+60", // Malaysia
-        "216": "+66"  // Thailand
     },
     "nationality": {
         "1": "Malaysian",
@@ -291,3 +321,7 @@
     },
 }
 ```
+
+
+## Revision
+- v0.1.0 - 2022-04-15 - Register Endpoint

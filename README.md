@@ -138,6 +138,9 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 }
 ```
 
+## SMS
+- Staging server will not send out SMS, therefore we set the password to `123456` for testing purposes.
+
 ## Responses
 1. Successful Response, `http_code: 200`
    1. Phone number not exist, can register a new user, put this user into Move On VIP

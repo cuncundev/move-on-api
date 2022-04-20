@@ -71,7 +71,7 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
     
     /*
         Properties: integer, enums, optional
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
         Description: To omit this field, don't include this into the payload or provide zero, empty string, null, or any value other than specify in the enums will means not saving this field in our server.
     */
     "race": 1,
@@ -90,7 +90,7 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 
     /*
         Properties: integer, enums, required
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
         Description: We currently only support the genders listed in the enumerations sections.
     */
     "gender": 2, 
@@ -103,7 +103,7 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 
     /*
         Properties: integer, enums, required
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
         Description: To tell user is Malaysian or Non-Malaysian
 
     */
@@ -111,7 +111,7 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 
     /*
         Properties: integer, enums, required
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
         Description: To tell the national_id whether is a MyKad, Passport, Police ID or Army ID. 
     */
     "national_id_type": 1,
@@ -124,13 +124,15 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 
     /*
         Properties: integer, enums, required
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
+        Description: Required by insurance provider.        
     */
     "industry": 3,
 
     /*
         Properties: integer, required
-        Enums: Please refer to the enumerations sections of this documentation
+        Enums: Please refer to the enumerations sections of this documentation.
+        Description: Required by insurance provider.
     */
     "occupation": 18
 }

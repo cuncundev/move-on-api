@@ -146,9 +146,9 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
    1. Phone number not exist, can register a new user, put this user into Move On VIP
         ```js
         {
-            "user_is_new" : true,
-            "user_has_vip": false,
-            "sms_sent"    : true,
+            "user_is_new" : true, // to tell this user has or has not register in our system
+            "user_has_vip": false, // to tell this user has or has not have any VIP membership
+            "sms_sent"    : true, // to tell our system have sent a SMS contain the first time password to this user
             "message"     : "new_cuncun_user_created_with_MO_VIP_member"
         }        
         ```

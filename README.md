@@ -139,7 +139,7 @@ This API documentation is solely written for **Move On by Gisel United Sdn Bhd (
 ```
 
 ## SMS
-- Staging server will not send out SMS, therefore we set the password to `123456` for testing purposes.
+- Staging server will not send out SMS, therefore we will set the password to `123456` for testing purposes in [staging server](https://staging.cuncun2u.com).
 
 ## Responses
 1. Successful Response, `http_code: 200`
